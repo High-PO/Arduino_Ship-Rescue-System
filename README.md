@@ -15,12 +15,13 @@ Arduino Uno 보드를 활용하여 선박 구조 시스템을 구축하는 코�
 4. RFID로 카드를 인식하면 펌프모터가 반대로 작동하여 물이 차지 않게 줄어듬
 5. 해당 모든 과정을 ESP32 모듈을 통해서 실시간 웹사이트로 제공한다.
 ### 회로도
+
 ## EN Version
 ### Supplies
 It is a code for constructing a ship rescue system using the Arduino Uno board.
 The preparations used are as follows.
 - Pump motor
-- - RFID
+- RFID
 - Contact type water level sensor
 - Piezo Buzzer
 - Switch
@@ -31,3 +32,4 @@ The preparations used are as follows.
 4. If the card is recognized by RFID, the pump motor operates in reverse, reducing the water level
 5. All applicable processes are provided through the ESP32 module as a real-time website.
 
+### Circuit Diagram
