@@ -21,6 +21,12 @@ void setup() {
 }
  
 void loop() {
+  int level = analogRead(A0);  // 수분센서의 신호를 측정합니다.
+  if (level > 580){
+    Serial.println("Warring");   //시리얼 모니터에 값을 출력합니다.
+    tone(TONEPIN ,523,1000/8);
+    delay(1000/4*1.30);
+  }  
   // 새 카드 확인
   if ( ! mfrc522.PICC_IsNewCardPresent()) return; 
   // 카드 읽기
@@ -30,21 +36,12 @@ void loop() {
         mfrc522.uid.uidByte[2] == CardUidByte[2] && mfrc522.uid.uidByte[3] == CardUidByte[3] ){    
     state=!state;
     if(state == true){
+      digitalWrite(IN1, HIGH); //정방향회전
+      digitalWrite(IN2, LOW);      
       Serial.println("Open");
-      //카드 확인 메세지 음
-      tone(TONEPIN ,523,1000/8);
-      delay(1000/4*1.30);             
+      //카드 확인 메세지 음           
       noTone(TONEPIN );            
       delay(1000);
     }
-    else{
-      Serial.println("Close");
-      //카드 확인 메세지 음
-      tone(TONEPIN ,523,1000/8);
-      delay(1000/4*1.30);             
-      noTone(TONEPIN );  
-      delay(1000);
-    }
-    delay(2000);
-   }  
+  }
 }
