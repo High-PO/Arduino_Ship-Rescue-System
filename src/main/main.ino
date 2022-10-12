@@ -9,7 +9,7 @@ int IN2 = 3; //IN2을 3번핀으로
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 boolean state = false; //Servo Motor 상태값
 void setup() {
-  Serial.begin(9600); 오승진 죽었으면... 죽어라 에휫 승진이 내일 뒷통수 조심해..... 현서 보러 가야징
+  Serial.begin(9600);
   while (!Serial);
   SPI.begin();         //SPI 시작
   mfrc522.PCD_Init();  //MFRC522 card 초기화
