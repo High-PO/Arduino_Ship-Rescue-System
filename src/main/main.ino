@@ -9,7 +9,7 @@ int IN2 = 3; //IN2을 3번핀으로
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 boolean state = false; //Servo Motor 상태값
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); 오승진 죽었으면... 죽어라 에휫 승진이 내일 뒷통수 조심해..... 현서 보러 가야징
   while (!Serial);
   SPI.begin();         //SPI 시작
   mfrc522.PCD_Init();  //MFRC522 card 초기화
@@ -35,10 +35,15 @@ void loop() {
       digitalWrite(IN1, HIGH);
       digitalWrite(IN2, LOW);
       Serial.println("Open");
-      tone(TONEPIN ,523,1000/8); // 비프음이 울리게한다.
+      delay(1000);
       // //카드 확인 메세지 음
       // noTone(TONEPIN);
       // delay(1000);
+    }
+    else{
+      digitalWrite(IN1, LOW);
+      digitalWrite(IN2, LOW);
+      delay(1000);
     }
   }
 }
